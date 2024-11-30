@@ -8,7 +8,7 @@ const Blog = () => {
         {/* Title */}
         <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
           <h2 className="text-2xl font-bold md:text-4xl md:leading-tight">
-            The Blog
+            Blog
           </h2>
           <p className="mt-1 text-gray-600">
             See how game-changing companies are making the most of every
