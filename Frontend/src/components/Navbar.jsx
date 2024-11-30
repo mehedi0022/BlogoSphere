@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
+import logo from "../assets/Logo.png";
 
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between py-5 text-sm mb-3 border-b border-gray-400">
       {/* Nav Logo */}
       <div>
-        <img src="" alt="Logo" />
+        <img className="w-56" src={logo} alt="Logo" />
       </div>
 
       {/* Start Nav Link */}
@@ -35,7 +36,9 @@ const Navbar = () => {
 
       {/* Admin Login Button */}
       <div>
-        <button>Login</button>
+        <button className="bg-indigo-400 px-10 py-3 rounded-full text-sm text-white">
+          Admin Panel
+        </button>
       </div>
     </div>
   );
