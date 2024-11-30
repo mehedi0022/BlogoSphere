@@ -1,14 +1,25 @@
 const express = require("express");
-var cors = require("cors");
+require("dotenv").config();
+const cors = require("cors");
 const adminRoute = require("./routes/adminRoute");
 const userRoute = require("./routes/userRoute");
-const app = express();
+const connectDB = require("./config/mongoDB");
 
-app.use(cors());
+// app config
+const app = express();
+const PORT = process.env.PORT || 4000;
+
+// middlewares
 app.use(express.json());
+app.use(cors());
+
+//Setup Router
 app.use("/api/admin", adminRoute);
 app.use("/api/user", userRoute);
 
-app.listen(4000, () => {
-  console.log("App Running On port 4000");
+// Connect Database
+connectDB();
+
+app.listen(PORT, () => {
+  console.log("App Running On port " + PORT);
 });
