@@ -98,8 +98,7 @@ export const services = [
 export const team = [
   {
     name: "Mehedi Hassan",
-    image:
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    image: "https://habibthedeveloper.com/assets/img/mehedi%20Hassan.png",
     position: "UI/UX Designer",
     desc: "I am an ambitious workaholic, but apart from that, pretty simple person.",
     social: {
@@ -110,8 +109,7 @@ export const team = [
   },
   {
     name: "Mehedi Hassan",
-    image:
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    image: "https://habibthedeveloper.com/assets/img/mehedi%20Hassan.png",
     position: "UI/UX Designer",
     desc: "I am an ambitious workaholic, but apart from that, pretty simple person.",
     social: {
@@ -122,8 +120,7 @@ export const team = [
   },
   {
     name: "Mehedi Hassan",
-    image:
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    image: "https://habibthedeveloper.com/assets/img/mehedi%20Hassan.png",
     position: "UI/UX Designer",
     desc: "I am an ambitious workaholic, but apart from that, pretty simple person.",
     social: {
