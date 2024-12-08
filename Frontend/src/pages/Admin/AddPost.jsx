@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { AdminContext } from "../../context/AdminContext";
 import { assets } from "../../assets/assets";
+import { toast } from "react-toastify";
 
 const AddPost = () => {
   const [title, setTitle] = useState("");
@@ -28,6 +29,9 @@ const AddPost = () => {
         { headers: { aToken } }
       );
       console.log(data);
+      if (data.success) {
+        toast.success(data.message);
+      }
     } catch (error) {
       console.log(error.message);
     }
