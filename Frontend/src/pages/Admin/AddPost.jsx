@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import axios from "axios";
 import { AdminContext } from "../../context/AdminContext";
 
 const AddPost = () => {
@@ -13,13 +14,21 @@ const AddPost = () => {
     event.preventDefault();
 
     try {
+      const postData = {
+        title,
+        shortDesc,
+        desc,
+      };
+
       const { data } = await axios.post(
         backendURL + "/api/admin/add-post",
-        { title, shortDesc, desc, featuredImage },
+        postData,
         { headers: { aToken } }
       );
       console.log(data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (

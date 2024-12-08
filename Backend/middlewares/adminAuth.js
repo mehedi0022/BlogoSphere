@@ -4,12 +4,12 @@ const jwt = require("jsonwebtoken");
 
 const authAdmin = async (req, res, next) => {
   try {
-    const { aToken } = req.headers;
+    const { atoken } = req.headers;
 
-    if (!aToken) {
+    if (!atoken) {
       return res.json({ success: false, message: "Not Authorize login First" });
     }
-    const decodedToken = jwt.verify(aToken, process.env.JWT_SECRET);
+    const decodedToken = jwt.verify(atoken, process.env.JWT_SECRET);
 
     if (decodedToken.email !== process.env.ADMIN_EMAIl) {
       return res.json({ success: false, message: "Not Admin login First" });
