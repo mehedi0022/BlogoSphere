@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import axios from "axios";
 import { AdminContext } from "../../context/AdminContext";
+import { assets } from "../../assets/assets";
 
 const AddPost = () => {
   const [title, setTitle] = useState("");
@@ -18,6 +19,7 @@ const AddPost = () => {
         title,
         shortDesc,
         desc,
+        featuredImage,
       };
 
       const { data } = await axios.post(
@@ -39,7 +41,11 @@ const AddPost = () => {
           <label htmlFor="postImage">
             <img
               className="w-36 bg-gray-100 rounded cursor-pointer"
-              src={featuredImage ? URL.createObjectURL(featuredImage) : ""}
+              src={
+                featuredImage
+                  ? URL.createObjectURL(featuredImage)
+                  : assets.upload_area
+              }
               alt=""
             />
           </label>
