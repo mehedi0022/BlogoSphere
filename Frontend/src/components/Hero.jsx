@@ -10,8 +10,8 @@ const Hero = () => {
       <div className="justify-center content-center">
         <p className="font-semibold">Hi, there!</p>
         <h2 className="text-4xl font-bold">
-          <span className="text-red-300 ">BlogoSphere</span> is here to be your
-          assistance
+          <span className="text-red-300 ">Mehedi Hassan</span> is here to be
+          your assistance
         </h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae soluta

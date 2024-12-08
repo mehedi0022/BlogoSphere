@@ -1,2 +1,3 @@
 # BlogoSphere
- Design And Developed BlogApp Using MERN Stack
+
+Design And Developed BlogApp Using MERN Stack
