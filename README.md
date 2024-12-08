@@ -10,7 +10,7 @@
 
 ### Frontend URL
 
-- [Frontend](https://blogo-sphere-cb0jlj8jp-mehedis-projects-9b029470.vercel.app/)
+- [Frontend](https://blogo-sphere-puce.vercel.app/)
 
 ### Backend URL
 
