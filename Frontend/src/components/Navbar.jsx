@@ -1,8 +1,17 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/Logo.png";
+import { useContext } from "react";
+import { AdminContext } from "../context/AdminContext";
 
 const Navbar = () => {
   const navigrator = useNavigate();
+  const { aToken, setAToken } = useContext(AdminContext);
+
+  const logOut = () => {
+    setAToken("");
+    localStorage.removeItem("aToken");
+    navigrator("/");
+  };
   return (
     <div className="flex items-center justify-between py-5 text-sm mb-3 border-b border-gray-400">
       {/* Nav Logo */}
@@ -41,7 +50,7 @@ const Navbar = () => {
           onClick={() => navigrator("/blog-admin")}
           className="bg-indigo-400 px-10 py-3 rounded-full text-sm text-white"
         >
-          Admin Panel
+          {aToken ? <span onClick={logOut}>Log Out</span> : "Admin Log In"}
         </button>
       </div>
     </div>

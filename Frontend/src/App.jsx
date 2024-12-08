@@ -7,10 +7,15 @@ import Services from "./pages/Services";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AdminLogin from "./pages/AdminLogin";
+import AddPost from "./pages/Admin/AddPost";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <div className="mx-8 sm:mx-[10%]">
+      <ToastContainer />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,6 +24,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/blog-admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard/add-blog" element={<AddPost />} />
       </Routes>
 
       <Footer />
