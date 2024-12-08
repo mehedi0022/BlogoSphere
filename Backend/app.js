@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 require("dotenv").config();
 const cors = require("cors");
 const adminRoute = require("./routes/adminRoute");
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 4000;
 // middlewares
 app.use(express.json());
 app.use(cors());
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 //Setup Router
 app.use("/api/admin", adminRoute);

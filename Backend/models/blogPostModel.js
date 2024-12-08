@@ -6,13 +6,16 @@ const blogPostSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    shortDesc: {
+      type: String,
+      required: true,
+    },
     desc: {
       type: String,
       required: true,
     },
     featuredImage: {
       type: String,
-      required: true,
     },
   },
   { versionKey: false, timestamps: true }

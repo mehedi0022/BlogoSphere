@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/Logo.png";
 
 const Navbar = () => {
+  const navigrator = useNavigate();
   return (
     <div className="flex items-center justify-between py-5 text-sm mb-3 border-b border-gray-400">
       {/* Nav Logo */}
@@ -36,7 +37,10 @@ const Navbar = () => {
 
       {/* Admin Login Button */}
       <div>
-        <button className="bg-indigo-400 px-10 py-3 rounded-full text-sm text-white">
+        <button
+          onClick={() => navigrator("/blog-admin")}
+          className="bg-indigo-400 px-10 py-3 rounded-full text-sm text-white"
+        >
           Admin Panel
         </button>
       </div>

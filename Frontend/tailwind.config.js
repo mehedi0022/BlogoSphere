@@ -7,7 +7,11 @@ export default {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#5f6fff",
+      },
+    },
   },
   plugins: [require("@tailwindcss/forms"), require("preline/plugin")],
 };

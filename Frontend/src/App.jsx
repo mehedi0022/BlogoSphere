@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AdminLogin from "./pages/AdminLogin";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/blog-admin" element={<AdminLogin />} />
       </Routes>
 
       <Footer />
