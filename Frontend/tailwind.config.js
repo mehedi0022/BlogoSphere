@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "node_modules/preline/dist/*.js",
-  ],
-
-  theme: {
-    extend: {
-      colors: {
-        primary: "#5f6fff",
-      },
+export const content = [
+  "./index.html",
+  "./src/**/*.{js,ts,jsx,tsx}",
+  "node_modules/preline/dist/*.js",
+];
+export const theme = {
+  extend: {
+    colors: {
+      primary: "#5f6fff",
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("preline/plugin")],
 };
+export const plugins = [
+  require("@tailwindcss/forms"),
+  require("preline/plugin"),
+];
