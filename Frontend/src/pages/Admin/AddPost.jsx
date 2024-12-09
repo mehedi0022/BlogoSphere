@@ -8,7 +8,7 @@ const AddPost = () => {
   const [title, setTitle] = useState("");
   const [shortDesc, setShortDesc] = useState("");
   const [desc, setDesc] = useState("");
-  const [featuredImage, setFeaturedImage] = useState(null);
+  const [featuredImage, setFeaturedImage] = useState(false);
 
   const { backendURL, aToken } = useContext(AdminContext);
 
@@ -17,20 +17,17 @@ const AddPost = () => {
 
     try {
       const formData = new FormData();
+
+      formData.append("image", featuredImage);
       formData.append("title", title);
       formData.append("shortDesc", shortDesc);
       formData.append("desc", desc);
-      if (featuredImage) {
-        formData.append("featuredImage", featuredImage);
-      }
 
       const { data } = await axios.post(
         backendURL + "/api/admin/add-post",
         formData,
-        { headers: { "Content-Type": "multipart/form-data", aToken } }
+        { headers: { aToken } }
       );
-
-      console.log(data);
 
       if (data.success) {
         toast.success(data.message);

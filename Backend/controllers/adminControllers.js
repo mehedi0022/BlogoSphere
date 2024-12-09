@@ -1,7 +1,6 @@
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const cloudinary = require("cloudinary");
 const blogPostModel = require("../models/blogPostModel");
-const upload = require("../config/multer");
 
 // API for Admin Login
 const loginAdmin = async (req, res) => {
@@ -36,11 +35,16 @@ const addPost = async (req, res) => {
   try {
     const { title, shortDesc, desc } = req.body;
 
+    const imageUpload = await cloudinary.uploader.upload(imageFile.path, {
+      resource_type: "image",
+    });
+    const imageUrl = imageUpload.secure_url;
+
     const newPost = new blogPostModel({
       title,
       shortDesc,
       desc,
-      featuredImage: req.file ? req.file.path : "",
+      featuredImage: imageUrl,
     });
     await newPost.save();
 
