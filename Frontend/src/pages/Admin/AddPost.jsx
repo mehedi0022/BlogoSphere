@@ -16,19 +16,16 @@ const AddPost = () => {
     event.preventDefault();
 
     try {
-      const postData = {
-        title,
-        shortDesc,
-        desc,
-        featuredImage,
-      };
+      console.log("Hello");
 
       const { data } = await axios.post(
         backendURL + "/api/admin/add-post",
-        postData,
+        { title, shortDesc, desc, featuredImage },
         { headers: { aToken } }
       );
+
       console.log(data);
+
       if (data.success) {
         toast.success(data.message);
       }

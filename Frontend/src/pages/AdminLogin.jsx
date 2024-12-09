@@ -14,7 +14,7 @@ const AdminLogin = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
 
-    const { data } = await axios.post("http://localhost:5500/api/admin/login", {
+    const { data } = await axios.post(backendURL + "/api/admin/login", {
       email,
       password,
     });
