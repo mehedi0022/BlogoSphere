@@ -27,7 +27,7 @@ const AddPost = () => {
       const { data } = await axios.post(
         backendURL + "/api/admin/add-post",
         formData,
-        { headers: { aToken } }
+        { headers: { "Content-Type": "multipart/form-data", aToken } }
       );
 
       console.log(data);
