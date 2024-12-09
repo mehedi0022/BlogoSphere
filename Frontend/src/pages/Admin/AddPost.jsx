@@ -18,10 +18,10 @@ const AddPost = () => {
     try {
       const formData = new FormData();
 
-      formData.append("image", featuredImage);
       formData.append("title", title);
       formData.append("shortDesc", shortDesc);
       formData.append("desc", desc);
+      formData.append("image", featuredImage);
 
       const { data } = await axios.post(
         backendURL + "/api/admin/add-post",

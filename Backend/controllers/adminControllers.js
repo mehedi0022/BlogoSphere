@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const cloudinary = require("cloudinary");
 const blogPostModel = require("../models/blogPostModel");
 
 // API for Admin Login
@@ -35,16 +34,13 @@ const addPost = async (req, res) => {
   try {
     const { title, shortDesc, desc } = req.body;
 
-    const imageUpload = await cloudinary.uploader.upload(imageFile.path, {
-      resource_type: "image",
-    });
-    const imageUrl = imageUpload.secure_url;
+    console.log(req.file.path);
 
     const newPost = new blogPostModel({
       title,
       shortDesc,
       desc,
-      featuredImage: imageUrl,
+      featuredImage: req.file ? req.file.path : "",
     });
     await newPost.save();
 
