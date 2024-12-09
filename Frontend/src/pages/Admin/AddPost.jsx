@@ -16,7 +16,7 @@ const AddPost = () => {
     event.preventDefault();
 
     try {
-      console.log("Hello");
+      console.log(featuredImage);
 
       const { data } = await axios.post(
         backendURL + "/api/admin/add-post",
@@ -52,6 +52,7 @@ const AddPost = () => {
           </label>
           <input
             onChange={(e) => setFeaturedImage(e.target.files[0])}
+            value={featuredImage}
             type="file"
             id="postImage"
             hidden
