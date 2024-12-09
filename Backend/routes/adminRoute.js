@@ -16,7 +16,12 @@ adminRoute.get("/", (req, res) => {
 // API Routes for Blog Post
 adminRoute.post("/login", loginAdmin);
 adminRoute.get("/all-post", authAdmin, addPost);
-adminRoute.post("/add-post", authAdmin, upload.single("image"), addPost);
+adminRoute.post(
+  "/add-post",
+  authAdmin,
+  upload.single("featuredImage"),
+  addPost
+);
 adminRoute.delete("/delete-post/:id", authAdmin, deletePost);
 adminRoute.put("/update-post/:id", authAdmin, upload.single("image"), addPost);
 

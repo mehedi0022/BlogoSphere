@@ -8,7 +8,7 @@ const AddPost = () => {
   const [title, setTitle] = useState("");
   const [shortDesc, setShortDesc] = useState("");
   const [desc, setDesc] = useState("");
-  const [featuredImage, setFeaturedImage] = useState(false);
+  const [featuredImage, setFeaturedImage] = useState(null);
 
   const { backendURL, aToken } = useContext(AdminContext);
 
@@ -16,11 +16,17 @@ const AddPost = () => {
     event.preventDefault();
 
     try {
-      console.log(featuredImage);
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("shortDesc", shortDesc);
+      formData.append("desc", desc);
+      if (featuredImage) {
+        formData.append("featuredImage", featuredImage);
+      }
 
       const { data } = await axios.post(
         backendURL + "/api/admin/add-post",
-        { title, shortDesc, desc, featuredImage },
+        formData,
         { headers: { aToken } }
       );
 
@@ -52,7 +58,7 @@ const AddPost = () => {
           </label>
           <input
             onChange={(e) => setFeaturedImage(e.target.files[0])}
-            value={featuredImage}
+            value={URL.createObjectURL(featuredImage)}
             type="file"
             id="postImage"
             hidden
