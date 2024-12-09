@@ -58,7 +58,6 @@ const AddPost = () => {
           </label>
           <input
             onChange={(e) => setFeaturedImage(e.target.files[0])}
-            value={URL.createObjectURL(featuredImage)}
             type="file"
             id="postImage"
             hidden
