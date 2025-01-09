@@ -14,8 +14,21 @@ const blogPostSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    slug: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     featuredImage: {
       type: String,
+    },
+    isFeatured: {
+      type: Boolean,
+      default: false,
+    },
+    views: {
+      type: Number,
+      default: 0,
     },
   },
   { versionKey: false, timestamps: true }

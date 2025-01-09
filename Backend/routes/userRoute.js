@@ -1,12 +1,8 @@
 const express = require("express");
+const { getPost } = require("../controllers/userControllers");
 
 const userRoute = express.Router();
 
-userRoute.get("/get-blog-post", (req, res) => {
-  res.json({
-    success: true,
-    message: "Api Working",
-  });
-});
+userRoute.get("/all-post", getPost);
 
 module.exports = userRoute;

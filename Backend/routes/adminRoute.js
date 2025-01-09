@@ -2,6 +2,7 @@ const express = require("express");
 const upload = require("../config/multer");
 const {
   addPost,
+  getPost,
   loginAdmin,
   deletePost,
 } = require("../controllers/adminControllers");
@@ -15,7 +16,7 @@ adminRoute.get("/", (req, res) => {
 
 // API Routes for Blog Post
 adminRoute.post("/login", loginAdmin);
-adminRoute.get("/all-post", authAdmin, addPost);
+adminRoute.get("/all-post", getPost);
 adminRoute.post("/add-post", authAdmin, upload.single("image"), addPost);
 adminRoute.delete("/delete-post/:id", authAdmin, deletePost);
 adminRoute.put("/update-post/:id", authAdmin, upload.single("image"), addPost);

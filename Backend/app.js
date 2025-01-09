@@ -17,7 +17,7 @@ app.use(
     origin: "*",
   })
 );
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/uploads", express.static("uploads"));
 
 //Setup Router
 app.use("/api/admin", adminRoute);

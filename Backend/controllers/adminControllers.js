@@ -56,6 +56,12 @@ const addPost = async (req, res) => {
   }
 };
 
+// API for get post
+const getPost = async (req, res) => {
+  const allPost = await blogPostModel.find();
+  console.log(allPost);
+};
+
 // Delete post
 const deletePost = async (req, res) => {
   try {
@@ -93,4 +99,4 @@ const deletePost = async (req, res) => {
 
 //Update Post by admin
 
-module.exports = { loginAdmin, addPost, deletePost };
+module.exports = { loginAdmin, addPost, getPost, deletePost };

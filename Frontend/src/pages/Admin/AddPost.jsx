@@ -3,6 +3,33 @@ import axios from "axios";
 import { AdminContext } from "../../context/AdminContext";
 import { assets } from "../../assets/assets";
 import { toast } from "react-toastify";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
+const toolbarOptions = [
+  ["bold", "italic", "underline", "strike"], // toggled buttons
+  ["blockquote", "code-block"],
+  ["link", "image", "video", "formula"],
+
+  [{ header: 1 }, { header: 2 }], // custom button values
+  [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
+  [{ script: "sub" }, { script: "super" }], // superscript/subscript
+  [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+  [{ direction: "rtl" }], // text direction
+
+  [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+  [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+  [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+  [{ font: [] }],
+  [{ align: [] }],
+
+  ["clean"], // remove formatting button
+];
+
+const modules = {
+  toolbar: toolbarOptions,
+};
 
 const AddPost = () => {
   const [title, setTitle] = useState("");
@@ -90,15 +117,12 @@ const AddPost = () => {
 
             <div className="flex-1 flex flex-col gap-1">
               <p>Description</p>
-
-              <textarea
-                onChange={(e) => setDesc(e.target.value)}
+              <ReactQuill
+                theme="snow"
                 value={desc}
-                className="w-full border rounded px-4 py-2"
-                placeholder="Write Blog here"
-                rows={5}
-                required
-              ></textarea>
+                modules={modules}
+                onChange={setDesc}
+              />
             </div>
 
             <button className="px-10 py-3 mt-4 bg-primary rounded-full text-white text-sm">

@@ -1,6 +1,9 @@
-import { post } from "../assets/assets";
+import { useContext } from "react";
+import { AdminContext } from "../context/AdminContext";
 
 const Post = () => {
+  const { post } = useContext(AdminContext);
+
   return (
     <>
       {/* Card Blog */}
@@ -17,7 +20,7 @@ const Post = () => {
                 <div className="aspect-w-16 aspect-h-11">
                   <img
                     className="w-full object-cover rounded-xl"
-                    src={item.image}
+                    src={item.featuredImage}
                     alt="Blog Image"
                   />
                 </div>
@@ -25,9 +28,9 @@ const Post = () => {
                   <h3 className="text-xl font-semibold text-gray-800">
                     {item.title}
                   </h3>
-                  <p className="mt-5 text-gray-600">{item.desc}</p>
+                  <p className="mt-5 text-gray-600">{item.shortDesc}</p>
                 </div>
-                <div className="mt-auto flex items-center gap-x-3">
+                {/* <div className="mt-auto flex items-center gap-x-3">
                   <img
                     className="size-8 rounded-full"
                     src={item.authImage}
@@ -38,7 +41,7 @@ const Post = () => {
                       By <span>{item.authName}</span>
                     </h5>
                   </div>
-                </div>
+                </div> */}
               </a>
             </div>
           ))}
